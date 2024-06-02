@@ -11,34 +11,25 @@
     </div>
     <!--navigation-->
     <ul class="metismenu" id="menu">
-
-        <li class="menu-label"> Menu Admin </li>
         <li>
-            <a href="{{ url('/dashboard_admin') }}">
+            <a href="{{ url('/beranda') }}">
                 <div class="parent-icon"><i class='bx bx-home-circle'></i>
                 </div>
-                <div class="menu-title">Dashboard</div>
+                <div class="menu-title">Beranda</div>
             </a>
         </li>
         <li>
             <a href="{{ url('/data_pengaduan') }}">
                 <div class="parent-icon"><i class="bi bi-list-task"></i>
                 </div>
-                <div class="menu-title">Data Pengaduan</div>
+                <div class="menu-title">Explore</div>
             </a>
         </li>
         <li>
-            <a href="{{ url('/data_user') }}">
-                <div class="parent-icon"><i class="bi bi-person-lines-fill"></i>
+            <a href="">
+                <div class="parent-icon"><i class="bi bi-list-task"></i>
                 </div>
-                <div class="menu-title">Data User</div>
-            </a>
-        </li>
-        <li class="mt-5">
-            <a href="{{ url('/logout') }}">
-                <div class="parent-icon"><i class="bi bi-box-arrow-left"></i>
-                </div>
-                <div class="menu-title">Logout</div>
+                <div class="menu-title">LogOut</div>
             </a>
         </li>
     </ul>

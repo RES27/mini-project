@@ -60,7 +60,7 @@
                 <div class="text-center text-lg-start mt-4 pt-2">
                     <button type="submit" data-mdb-button-init data-mdb-ripple-init
                         class="btn btn-primary btn-lg">Daftar</button>
-                    <p class="small fw-bold mt-2 pt-1 mb-0 text-light">Sudah memiliki akun? <a href=""
+                    <p class="small fw-bold mt-2 pt-1 mb-0 text-light">Sudah memiliki akun? <a href="{{ route('login') }}"
                             class="link-danger">Masuk</a></p>
                 </div>
             </form>

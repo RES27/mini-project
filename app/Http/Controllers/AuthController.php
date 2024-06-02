@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Post;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -73,23 +75,34 @@ class AuthController extends Controller
             'password.min' => 'Password minimal 8 karakter',
         ]);
 
-        $user = User::where('email', $request->email)->first();
+        $credentials = $request->only('email', 'password');
 
-        if ($user) {
-            if (Hash::check($request->password, $user->password)) {
-                return redirect()->route('explore');
-            } else {
-                return redirect()->route('login')
-                    ->with('error', 'Password is wrong');
-            }
-        } else {
-            return redirect()->route('login')
-                ->with('error', 'Email is not registered');
+        if (Auth::attempt($credentials)) {
+            // Jika otentikasi berhasil
+            return redirect()->intended('beranda');
         }
+
+        // Jika otentikasi gagal
+        return back()->withErrors(['email' => 'Email atau password salah']);
     }
 
     public function logout()
     {
+        Auth::logout();
         return redirect()->route('login');
+    }
+
+    public function dashboard()
+    {
+        $user = Auth::user();
+        $data = POST::all();
+        $list = POST::where('user_id', $user->id)->get();
+
+        if (!$user) {
+            return redirect()->route('login');
+        }
+        else{
+            return view('user.beranda', compact('user' , 'list', 'data'));
+        }
     }
 }

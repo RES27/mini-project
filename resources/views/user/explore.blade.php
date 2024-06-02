@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('layout_user.index')
 @section('content')
 <div class="container">
     <div class="page-wrapper">
@@ -16,6 +16,4 @@
               </form>
         </div>
     </div>
-
-
 @endsection

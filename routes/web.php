@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ExploreController;
+use App\Http\Controllers\berandaController;
+use App\Http\Controllers\PostingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,10 @@ Route::get('/register',[App\Http\Controllers\AuthController::class, 'register'])
 Route::post('/register',[App\Http\Controllers\AuthController::class, 'onregis'])->name('onregis');
 Route::get('/login',[App\Http\Controllers\AuthController::class, 'login'])->name('login');
 Route::post('/login',[App\Http\Controllers\AuthController::class, 'onlogin'])->name('onlogin');
+Route::get('/logout',[App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
-
+//user
+Route::get('/beranda',[App\Http\Controllers\AuthController::class, 'dashboard'])->name('beranda');
 Route::get('/explore', [App\Http\Controllers\ExploreController::class, 'index'])->name('explore');
+Route::get('/posting', [App\Http\Controllers\PostingController::class, 'show'])->name('posting');
+Route::post('/posting', [App\Http\Controllers\PostingController::class, 'store'])->name('posting.store');
