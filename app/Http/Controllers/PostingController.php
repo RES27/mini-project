@@ -31,7 +31,7 @@ class PostingController extends Controller
 
 
         $foto = $request->file('foto');
-        $foto_name = time() . "_" . $foto->getClientOriginalName();
+        $foto_name = uniqid() . "_" . $foto->getClientOriginalName();
         $path = $foto->storeAs('public/images', $foto_name);
         $fullPath = storage_path('app/' . $path);
 

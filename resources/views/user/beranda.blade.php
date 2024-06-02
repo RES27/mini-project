@@ -1,9 +1,9 @@
 @extends('layout_user.index')
 @section('content')
 <div class="container">
-    <div class="container">
+    <div class="page-wrapper">
+        @foreach ($data as $item)
         <section class="mx-auto my-5" style="max-width: 23rem;">
-        @foreach ($data as $item) )
           <div class="card">
             <div class="card-body d-flex flex-row">
               <img src="{{$item->foto}}" class="rounded-circle me-3" height="50px"
@@ -14,7 +14,7 @@
               </div>
             </div>
             <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
-              <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/full page/2.jpg"
+              <img class="img-fluid" src="{{ asset('storage/images/' . $item->foto)}}"
                 alt="Card image cap" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -35,9 +35,8 @@
               </div>
             </div>
           </div>
-        @endforeach
         </section>
-      </div>
+        @endforeach
     </div>
 </div>
 @endsection
