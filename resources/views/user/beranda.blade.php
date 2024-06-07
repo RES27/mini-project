@@ -2,16 +2,17 @@
 @section('content')
 <div class="container">
     <div class="page-wrapper">
-        @foreach ($data as $item)
-        <section class="mx-auto my-5" style="max-width: 23rem;">
-          <div class="card">
-            <div class="card-body d-flex flex-row">
-              <img src="{{$item->foto}}" class="rounded-circle me-3" height="50px"
-                width="50px" alt="avatar" />
-              <div>
-                <h5 class="card-title font-weight-bold mb-2">{{$item->user_id}}</h5>
-                <p class="card-text"><i class="far fa-clock pe-2"></i>{{$item->created_at}}</p>
-              </div>
+        <div class="page-content">
+            @foreach ($data as $item)
+            <section class="mx-auto my-5" style="max-width: 23rem;">
+            <div class="card">
+                <div class="card-body d-flex flex-row">
+                    <img src="{{$item->foto}}" class="rounded-circle me-3" height="50px"
+                     width="50px" alt="avatar" />
+                <div>
+                    <h5 class="card-title font-weight-bold mb-2">{{$item->user_id}}</h5>
+                    <p class="card-text"><i class="far fa-clock pe-2"></i>{{$item->created_at}}</p>
+                </div>
             </div>
             <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
               <img class="img-fluid" src="{{ asset('storage/images/' . $item->foto)}}"
@@ -35,8 +36,9 @@
               </div>
             </div>
           </div>
-        </section>
-        @endforeach
+            </section>
+            @endforeach
+        </div>
     </div>
 </div>
 @endsection

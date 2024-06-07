@@ -19,17 +19,17 @@
             </a>
         </li>
         <li>
-            <a href="{{ url('/data_pengaduan') }}">
+            <a href="{{ url('/explore') }}">
                 <div class="parent-icon"><i class="bi bi-list-task"></i>
                 </div>
                 <div class="menu-title">Explore</div>
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="{{ url('/login')}}">
                 <div class="parent-icon"><i class="bi bi-list-task"></i>
                 </div>
-                <div class="menu-title">LogOut</div>
+                <div class="menu-title">Login</div>
             </a>
         </li>
     </ul>

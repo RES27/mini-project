@@ -96,7 +96,7 @@ class AuthController extends Controller
     {
         $user = Auth::user();
         $data = POST::all();
-        $list = POST::where('user_id', $user->id)->get();
+        // $list = POST::where('user_id', $user->id)->get();
 
         if (!$user) {
             return redirect()->route('login');

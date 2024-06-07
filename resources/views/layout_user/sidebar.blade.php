@@ -5,9 +5,9 @@
         </div>
         <div>
             @if (auth()->check())
-                 {{ auth()->user()->name }}
+                 <a href="{{ route('profil')}}">{{ auth()->user()->name }}</a>
             @else
-                Silahkan Login terlebih dahulu
+            <a href="{{ route('profil')}}">Silahkan Login terlebih dahulu</a>
             @endif
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
